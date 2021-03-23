@@ -1,0 +1,157 @@
+body {
+    background: #000;
+    color: #fff;
+    background: lightblue url("background.jpg") no-repeat fixed center;
+    font-family: "Arsenal", sans-serif;
+}
+
+.chat {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 17%;
+    padding-right: 5px;
+    transform: initial;
+    -webkit-transform: initial;
+}
+
+#btnSend {
+    width: 100%;
+    background: #098CEB;
+    border: 0px;
+}
+
+.message {
+    position: relative;
+    height: 19vh;
+    bottom: 0px;
+    right: 0px;
+}
+
+.message textarea {
+    width: 100%;
+    resize: none;
+    font-size: small;
+    padding: 5px;
+    border: 1px solid #64D4FA;
+    background: #fff;
+}
+
+#btnMinimizeChat {
+    display: none;
+    padding: 0px 7px !important;
+    background: #098CEB;
+    border: none;
+    margin-bottom: 2px;
+    border-radius: 10px !important;
+}
+
+#btnMaximizeChat {
+    display: none;
+
+    padding: 0px 7px !important;
+    background: #098CEB;
+    border: none;
+    margin-bottom: 2px;
+    border-radius: 10px !important;
+}
+
+#history-messages {
+    // position: absolute;
+
+    // border: 1px solid #333;
+
+    // bottom: 0px;
+    // width: 100%;
+    // height: auto;
+}
+
+.history {
+    overflow: scroll;
+    position: relative;
+    height: 75vh;
+    background: #fff;
+    border-left: 1px solid #64D4FA;
+    border-bottom: 1px solid #64D4FA;
+    border-right: 1px solid #64D4FA;
+    padding: 0px;
+    overflow: scroll;
+    overflow-y: hidden;
+    font-size: small;
+    padding-left: 5px;
+    color: #000;
+    white-space: pre-wrap;
+}
+
+
+@keyframes hiddenChatAnimation {
+    from {
+        bottom: 0px;
+    }
+    to {
+        -webkit-transform: translateY(calc(100% - 27px));
+        transform: translateY(calc(100% - 27px));
+    }
+}
+
+@keyframes showChatAnimation {
+    from {
+        -webkit-transform: translateY(calc(100% - 27px));
+        transform: translateY(calc(100% - 27px));
+    }
+    to {
+        bottom: 0px;
+    }
+}
+
+.hiddenChat {
+    animation-name: hiddenChatAnimation;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.showChat {
+    animation-name: showChatAnimation;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+
+@media only screen and (max-width: 815px) {
+
+    .chat {
+        left: 0px;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: initial;
+        bottom: 0px;
+        background: #404040a8;
+        padding: 3px 10px 8px 10px;
+        z-index: 999;
+    }
+
+    .chat::before {
+        content: "Chat";
+        background: #098CEB;
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 10px;
+        font-family: "Arial";
+        font-size: x-small;
+        font-weight: bold;
+    }
+
+    .history {
+        height: 21vh;
+        margin-top: 3px;
+        border-top: 1px solid #64D4FA;
+    }
+
+    #btnMinimizeChat {
+        display: block;
+    }
+}
