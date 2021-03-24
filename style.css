@@ -1,9 +1,60 @@
 body {
-    background: #000;
+    background: #7adaf5;
     color: #fff;
-    background: lightblue url("background.jpg") no-repeat fixed center;
+    /* background: lightblue url("./images/background.jpg") no-repeat fixed center; */
     font-family: "Arsenal", sans-serif;
 }
+
+/**
+Transformers CSS Inicio
+*/
+
+#ads_transformers {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 10px;
+    display: none;
+}
+
+#close_img_transformers {
+    position: relative;
+    float: right;
+    width: 50px;
+    cursor: pointer;
+    margin-left: -50px;
+}
+
+#img_transformers {
+    width: 90%;
+    max-width: 300px;
+}
+
+@keyframes hiddenTransformerAnimation {
+    from {
+        bottom: 0px;
+    }
+    to {
+        transform: translateX(calc((-1 * (100% + 10px))));
+        display: none;
+    }
+}
+
+.hiddenTransformer {
+    animation-name: hiddenTransformerAnimation;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+/**
+Transformers CSS Fim
+*/
+
+
+
+/**
+Daqui para baixo, é código css para estilizar o chat
+*/
 
 .chat {
     position: absolute;
@@ -57,15 +108,7 @@ body {
     border-radius: 10px !important;
 }
 
-#history-messages {
-    // position: absolute;
 
-    // border: 1px solid #333;
-
-    // bottom: 0px;
-    // width: 100%;
-    // height: auto;
-}
 
 .history {
     overflow: scroll;
